@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CRUD System</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="head">
+        <h2>مرحبا بك</h2>
+        <h3>برنامج إدارة منتجات</h3>
+      </div>
+
+      <div class="inputs">
+        <input type="text" id="name" placeholder="إسم المنتج" />
+        <div class="wrapper">
+          <input
+            onkeyup="calcTotal()"
+            type="number"
+            id="price"
+            placeholder="سعر المنتج"
+          />
+          <input
+            onkeyup="calcTotal()"
+            type="number"
+            id="taxes"
+            placeholder="الضريبة"
+          />
+          <input
+            onkeyup="calcTotal()"
+            type="number"
+            id="ads"
+            placeholder="الاعلانات"
+          />
+          <input
+            onkeyup="calcTotal()"
+            type="number"
+            id="discount"
+            placeholder="الخصم"
+          />
+          <small id="total"></small>
+        </div>
+        <input type="number" id="count" placeholder="عدد الوحدات" />
+        <input type="text" id="category" placeholder="التصنيف" />
+        <button id="create">إنشاء</button>
+      </div>
+
+      <div class="outputs">
+        <div class="searchBox">
+          <input onkeyup="searchProducts(this.value)" type="text" id="search" placeholder="بحث" />
+          <div class="searchBtns">
+            <button onclick="getSearchMood(this.id)" id="searchName">بحث بالاسم</button>
+            <button onclick="getSearchMood(this.id)" id="searchCategory">بحث بالتصنيف</button>
+          </div>
+        </div>
+
+        <div id="delete-all-btn"></div>
+
+        <table>
+          <tr>
+            <th>الرقم</th>
+            <th>الاسم</th>
+            <th>السعر</th>
+            <th>الضريبة</th>
+            <th>الاعلانات</th>
+            <th>الخصم</th>
+            <th>المجموع</th>
+            <th>عدد الوحدات</th>
+            <th>التصنيف</th>
+            <th>تعديل</th>
+            <th>حذف</th>
+          </tr>
+
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
